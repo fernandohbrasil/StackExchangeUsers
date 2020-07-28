@@ -1,7 +1,9 @@
 package com.fernandohbrasil.stackexchange.ui.detail
 
-import androidx.lifecycle.ViewModel
+import com.fernandohbrasil.stackexchange.repository.UsersRepository
+import com.fernandohbrasil.stackexchange.ui.BaseViewModel
+import javax.inject.Inject
 
-class DetailViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-}
+class DetailViewModel @Inject constructor(
+    private val usersRepository: UsersRepository
+) : BaseViewModel() {}

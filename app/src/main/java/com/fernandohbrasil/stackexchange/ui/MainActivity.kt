@@ -3,18 +3,19 @@ package com.fernandohbrasil.stackexchange.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fernandohbrasil.stackexchange.R
-import com.fernandohbrasil.stackexchange.ui.main.MainFragment
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), HasAndroidInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
+
+    override fun androidInjector() = dispatchingAndroidInjector
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow()
-        }
     }
 }

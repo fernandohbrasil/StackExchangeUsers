@@ -1,5 +1,8 @@
-package com.fernandohbrasil.stackexchange.network
+package com.fernandohbrasil.stackexchange.di.module
 
+import com.fernandohbrasil.stackexchange.network.StackExchangeApi
+import dagger.Module
+import dagger.Provides
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,11 +11,15 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 private const val BASE_URL = "https://api.stackexchange.com"
 
-class StackExchangeFactory {
+@Module(includes = [ViewModelModule::class])
+class NetworkModule {
 
+    @Singleton
+    @Provides
     fun stackExchangeApi(): StackExchangeApi {
         val requestInterceptor = Interceptor { chain ->
             val originalRequest = chain.request()
