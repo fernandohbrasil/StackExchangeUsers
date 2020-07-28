@@ -8,19 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.fernandohbrasil.stackexchange.databinding.DetailFragmentBinding
+
+import com.fernandohbrasil.stackexchange.databinding.UserDetailFragmentBinding
 import com.fernandohbrasil.stackexchange.di.Injectable
 import javax.inject.Inject
 
-class DetailFragment : Fragment(), Injectable {
+class UserDetailFragment : Fragment(), Injectable {
 
-    private var _binding: DetailFragmentBinding? = null
+    private var _binding: UserDetailFragmentBinding? = null
     private val binding get() = _binding!!
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private val viewModel: DetailViewModel by viewModels {
+    private val viewModelUser: UserDetailViewModel by viewModels {
         viewModelFactory
     }
 
@@ -33,7 +34,7 @@ class DetailFragment : Fragment(), Injectable {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DetailFragmentBinding.inflate(inflater, container, false)
+        _binding = UserDetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -1,7 +1,7 @@
 package com.fernandohbrasil.stackexchange.di.module
 
-import com.fernandohbrasil.stackexchange.ui.detail.DetailFragment
-import com.fernandohbrasil.stackexchange.ui.main.MainFragment
+import com.fernandohbrasil.stackexchange.ui.detail.UserDetailFragment
+import com.fernandohbrasil.stackexchange.ui.main.ListUsersFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,8 +10,8 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun mainFragment(): MainFragment
+    abstract fun mainFragment(): ListUsersFragment
 
     @ContributesAndroidInjector
-    abstract fun detailFragment(): DetailFragment
+    abstract fun userDetailFragment(): UserDetailFragment
 }

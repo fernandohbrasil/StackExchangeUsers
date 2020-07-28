@@ -3,9 +3,9 @@ package com.fernandohbrasil.stackexchange.di.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fernandohbrasil.stackexchange.di.ViewModelKey
-import com.fernandohbrasil.stackexchange.ui.detail.DetailViewModel
+import com.fernandohbrasil.stackexchange.ui.detail.UserDetailViewModel
 import com.fernandohbrasil.stackexchange.ui.factory.ViewModelFactory
-import com.fernandohbrasil.stackexchange.ui.main.MainViewModel
+import com.fernandohbrasil.stackexchange.ui.main.ListUsersViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -18,11 +18,11 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(DetailViewModel::class)
-    abstract fun detailViewModel(detailViewModel: DetailViewModel): ViewModel
+    @ViewModelKey(UserDetailViewModel::class)
+    abstract fun userDetailViewModel(userDetailViewModel: UserDetailViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    abstract fun mainViewModel(mainViewModel: MainViewModel): ViewModel
+    @ViewModelKey(ListUsersViewModel::class)
+    abstract fun listUsersViewModel(listUsersViewModel: ListUsersViewModel): ViewModel
 }
