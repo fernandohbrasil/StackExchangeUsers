@@ -1,5 +1,6 @@
 package com.fernandohbrasil.stackexchange.ui.main
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.fernandohbrasil.stackexchange.R
 import com.fernandohbrasil.stackexchange.databinding.ListUsersFragmentBinding
 import com.fernandohbrasil.stackexchange.di.Injectable
 import com.fernandohbrasil.stackexchange.network.model.Users
@@ -43,7 +45,7 @@ class ListUsersFragment : Fragment(), Injectable {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sharedViewModel.setValuesAppBar(hasUpButton = false)
+        sharedViewModel.setValuesAppBar(getString(R.string.app_name),hasUpButton = false)
 
         listUsersViewModel.usersState.observe(viewLifecycleOwner, usersStateObserver())
 
