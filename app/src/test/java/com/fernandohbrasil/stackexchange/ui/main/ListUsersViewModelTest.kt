@@ -6,9 +6,7 @@ import com.fernandohbrasil.stackexchange.network.model.Badges
 import com.fernandohbrasil.stackexchange.network.model.User
 import com.fernandohbrasil.stackexchange.network.model.Users
 import com.fernandohbrasil.stackexchange.repository.UsersRepository
-import com.fernandohbrasil.stackexchange.ui.detail.*
 import io.reactivex.Flowable
-import io.reactivex.Single
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
