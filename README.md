@@ -30,5 +30,5 @@ So to test this, I just to need cover all states x who changes them.
 
 ## Screenshots
 
-![Screenshot1](screenshots/Screenshot1.png)
-![Screenshot2](screenshots/Screenshot2.png)
+![Screenshot1](screenshots/screenshot1.png)
+![Screenshot2](screenshots/screenshot2.png)
