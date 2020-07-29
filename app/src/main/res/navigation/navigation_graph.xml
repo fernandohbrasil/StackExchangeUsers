@@ -3,20 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/listUsersFragment">
 
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.fernandohbrasil.stackexchange.ui.detail.UserDetailFragment"
-        android:label="detail_fragment"
-        tools:layout="@layout/user_detail_fragment" />
-    <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/listUsersFragment"
         android:name="com.fernandohbrasil.stackexchange.ui.main.ListUsersFragment"
-        android:label="main_fragment"
+        android:label="list_users_fragment"
         tools:layout="@layout/list_users_fragment" >
         <action
-            android:id="@+id/action_mainFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_listUsersFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.fernandohbrasil.stackexchange.ui.detail.UserDetailFragment"
+        android:label="user_detail_fragment"
+        tools:layout="@layout/user_detail_fragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
     </fragment>
 </navigation>

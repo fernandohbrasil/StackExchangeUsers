@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.fernandohbrasil.stackexchange.databinding.ListUsersFragmentBinding
 import com.fernandohbrasil.stackexchange.di.Injectable
 import com.fernandohbrasil.stackexchange.network.model.Users
+import com.fernandohbrasil.stackexchange.ui.viewmodel.SharedViewModel
 import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 
@@ -29,9 +30,7 @@ class ListUsersFragment : Fragment(), Injectable {
         viewModelFactory
     }
 
-    private val navController by lazy {
-        findNavController()
-    }
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,12 +43,13 @@ class ListUsersFragment : Fragment(), Injectable {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedViewModel.setValuesAppBar(hasUpButton = false)
 
         listUsersViewModel.usersState.observe(viewLifecycleOwner, usersStateObserver())
 
         binding.apply {
             btSearch.setOnClickListener {
-                listUsersViewModel.findMySquad(etName.text.toString())
+                listUsersViewModel.getUsers(etName.text.toString())
             }
 
             etName.setOnEditorActionListener { _, actionId, _ ->

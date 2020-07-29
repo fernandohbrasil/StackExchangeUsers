@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvBadges"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/badges"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLabelGold"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large"
+        android:layout_marginTop="@dimen/small"
+        android:text="@string/gold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBadges" />
+
+    <TextView
+        android:id="@+id/tvGold"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/tvLabelGold"
+        app:layout_constraintTop_toTopOf="@id/tvLabelGold"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/tvLabelSilver"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:text="@string/silver"
+        app:layout_constraintStart_toStartOf="@+id/tvLabelGold"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelGold" />
+
+    <TextView
+        android:id="@+id/tvSilver"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/tvLabelSilver"
+        app:layout_constraintTop_toTopOf="@id/tvLabelSilver"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/tvLabelBronze"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:text="@string/bronze"
+        app:layout_constraintStart_toStartOf="@+id/tvLabelGold"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSilver" />
+
+    <TextView
+        android:id="@+id/tvBronze"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/tvLabelBronze"
+        app:layout_constraintTop_toTopOf="@id/tvLabelBronze"
+        tools:text="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

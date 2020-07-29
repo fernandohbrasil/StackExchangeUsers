@@ -5,11 +5,14 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 private const val BASE_URL = "https://api.stackexchange.com"
+private const val KEY = "key"
+private const val KEY_VALUE = "Fn1d3)FRZdHVG4anQNQK)Q(("
 
 class StackExchangeFactory {
 
@@ -19,7 +22,7 @@ class StackExchangeFactory {
             val originalHttpUrl: HttpUrl = originalRequest.url
 
             val url = originalHttpUrl.newBuilder()
-                //.addQueryParameter("apikey", PUBLIC_KEY)
+                .addQueryParameter(KEY, KEY_VALUE)
                 .build()
 
             val requestBuilder: Request.Builder = originalRequest.newBuilder()
@@ -29,7 +32,7 @@ class StackExchangeFactory {
             chain.proceed(request)
         }
 
-        val debugInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val debugInterceptor = HttpLoggingInterceptor().setLevel(BODY)
 
         val builder = OkHttpClient.Builder()
         builder.addInterceptor(debugInterceptor)

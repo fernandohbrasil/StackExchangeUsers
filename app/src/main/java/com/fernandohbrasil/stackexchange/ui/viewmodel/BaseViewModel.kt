@@ -1,4 +1,4 @@
-package com.fernandohbrasil.stackexchange.ui
+package com.fernandohbrasil.stackexchange.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

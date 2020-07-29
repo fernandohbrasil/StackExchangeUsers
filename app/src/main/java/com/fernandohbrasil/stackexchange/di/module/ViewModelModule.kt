@@ -6,6 +6,7 @@ import com.fernandohbrasil.stackexchange.di.ViewModelKey
 import com.fernandohbrasil.stackexchange.ui.detail.UserDetailViewModel
 import com.fernandohbrasil.stackexchange.ui.factory.ViewModelFactory
 import com.fernandohbrasil.stackexchange.ui.main.ListUsersViewModel
+import com.fernandohbrasil.stackexchange.ui.viewmodel.SharedViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -25,4 +26,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ListUsersViewModel::class)
     abstract fun listUsersViewModel(listUsersViewModel: ListUsersViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SharedViewModel::class)
+    abstract fun sharedViewModel(sharedViewModel: SharedViewModel): ViewModel
 }

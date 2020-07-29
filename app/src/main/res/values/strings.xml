@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Stack Exchange</string>
     <string name="search">SEARCH</string>
+    <string name="user_name">User name:</string>
+    <string name="reputation">Reputation:</string>
+    <string name="location">Location:</string>
+    <string name="creation_date">Creation Date:</string>
+    <string name="badges">Badges</string>
+    <string name="gold">Gold:</string>
+    <string name="silver">Silver:</string>
+    <string name="bronze">Bronze:</string>
 </resources>

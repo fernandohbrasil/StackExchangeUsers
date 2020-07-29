@@ -1,13 +1,15 @@
 package com.fernandohbrasil.stackexchange.network.model
 
+import com.squareup.moshi.Json
+
 data class User(
-    val user_id: Int,
-    val display_name: String,
-    val badge_counts: BadgeCounts,
-    val creation_date: Int,
-    val location: String,
-    val profile_image: String,
-    val reputation: Int
+    @field:Json(name = "user_id") val id: Int,
+    @field:Json(name = "display_name") val name: String,
+    @field:Json(name = "badge_counts") val badges: Badges,
+    @field:Json(name = "creation_date") val creationDate: Long,
+    @field:Json(name = "location") val location: String,
+    @field:Json(name = "profile_image") val profileImageUrl: String,
+    @field:Json(name = "reputation") val reputation: Int
 )
 
 data class Users(
