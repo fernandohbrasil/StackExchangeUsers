@@ -14,6 +14,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 private const val BASE_URL = "https://api.stackexchange.com"
+private const val KEY = "key"
+private const val KEY_VALUE = "Fn1d3)FRZdHVG4anQNQK)Q(("
 
 @Module(includes = [ViewModelModule::class])
 class NetworkModule {
@@ -26,7 +28,7 @@ class NetworkModule {
             val originalHttpUrl: HttpUrl = originalRequest.url
 
             val url = originalHttpUrl.newBuilder()
-                //.addQueryParameter("apikey", PUBLIC_KEY)
+                .addQueryParameter(KEY, KEY_VALUE)
                 .build()
 
             val requestBuilder: Request.Builder = originalRequest.newBuilder()
